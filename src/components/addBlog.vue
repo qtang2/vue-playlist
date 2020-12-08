@@ -55,11 +55,7 @@ export default{
   },
   methods: {
        post: function(){
-           this.$http.post('http://jsonplaceholder.typicode.com/posts', {
-               title: this.blog.title,
-               body: this.blog.content,
-               userId: 1
-           }).then(response=>{
+           this.$http.post('https://vue-playlist-387bd-default-rtdb.firebaseio.com/posts.json', this.blog).then(response=>{
              console.log(response)
              this.submitted = true
            },error=>{
